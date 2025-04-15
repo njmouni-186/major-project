@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalized Course Recommendation System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Personalized Course Recommendation System</h1>
+    </header>
+    <main>
+      <section id="user-input">
+        <h2>Enter Your Preferences</h2>
+        <form id="preferences-form">
+          <label for="cgpa">CGPA:</label>
+          <input
+            type="number"
+            id="cgpa"
+            name="cgpa"
+            step="0.01"
+            required
+          /><br />
+
+          <label for="credits">Preferred Course Credits (1-5):</label>
+          <input
+            type="number"
+            id="credits"
+            name="credits"
+            min="1"
+            max="5"
+            required
+          /><br />
+
+          <label for="teacher-rating">Preferred Teacher Rating (1-5):</label>
+          <input
+            type="number"
+            id="teacher-rating"
+            name="teacher-rating"
+            min="1"
+            max="5"
+            required
+          /><br />
+
+          <label for="teacher-friendliness"
+            >Preferred Teacher Friendliness (1-5):</label
+          >
+          <input
+            type="number"
+            id="teacher-friendliness"
+            name="teacher-friendliness"
+            min="1"
+            max="5"
+            required
+          /><br />
+
+          <label for="course-difficulty"
+            >Preferred Course Difficulty (1-5):</label
+          >
+          <input
+            type="number"
+            id="course-difficulty"
+            name="course-difficulty"
+            min="1"
+            max="5"
+            required
+          /><br />
+
+          <label for="teacher-skills"
+            >Preferred Teacher Teaching Skills (1-5):</label
+          >
+          <input
+            type="number"
+            id="teacher-skills"
+            name="teacher-skills"
+            min="1"
+            max="5"
+            required
+          /><br />
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section id="recommendation-output">
+        <h2>Recommended Courses</h2>
+        <div id="course-recommendation">
+          <!-- Course recommendation will be displayed here -->
+        </div>
+      </section>
+
+      <section id="feedback">
+        <h2>Feedback</h2>
+        <label for="feedback-rating"
+          >How helpful was the Course Recommendation to you on a scale of
+          0-10?</label
+        >
+        <input
+          type="number"
+          id="feedback-rating"
+          name="feedback-rating"
+          min="0"
+          max="10"
+          required
+        /><br />
+        <button type="submit">Submit Feedback</button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy;Personalized Course Recommendation System</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
